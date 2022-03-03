@@ -1,8 +1,8 @@
 import random as r
 
-def machine_guess(x=10):
+def machine_guess(x=100):
   pc_guess = r.randint(1, x)
-  print('1 dan 10 gacha son o\'yladim topolasizma? ')
+  print('1 dan 100 gacha son o\'yladim topolasizma? ')
 
   taxminlar = 0
   while True:
@@ -20,10 +20,10 @@ def machine_guess(x=10):
   print(f"Siz {taxminlar} ta taxmin bilan topdingiz")
   return taxminlar
 
-def person_guess(yuqori=10):
-  input(f"1 dan 10 gacha son o'ylang va istalgan tugmani bosing. Men topaman: ")
+def person_guess(x=100):
+  input(f"1 dan 100 gacha son o'ylang va istalgan tugmani bosing. Men topaman: ")
   quyi = 1
-  yuqori = 10
+  yuqori = x
   taxminlar = 0
   while True:
     taxminlar += 1
@@ -45,7 +45,7 @@ def person_guess(yuqori=10):
   print(f"men {taxminlar} ta taxmin bilan topdim")
   return taxminlar
 
-def play(x=10):
+def play(x=100):
     yana = True
     while yana:
         taxminlar_pc = machine_guess(x)
@@ -54,7 +54,7 @@ def play(x=10):
         if taxminlar_user > taxminlar_pc:
             print(f"Men {taxminlar_pc} taxmin bilan topdim va  yutdim!")
         elif taxminlar_user < taxminlar_pc:
-            print(f"Men {taxminlar_user} taxmin bilan topdingiz va yutdingiz!")
+            print(f"Siz {taxminlar_user} taxmin bilan topdingiz va yutdingiz!")
         else:
             print("Durrang!")
         yana = int(input("Yana o'ynaymizmi? Ha(1)/Yo'q(0):"))
